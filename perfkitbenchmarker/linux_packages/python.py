@@ -26,8 +26,8 @@ GET_VERSION = ('import sys; '
 
 def Install(vm):
   """Installs the package on the VM."""
-  vm.InstallPackages(vm.PYTHON_2_PACKAGE)
-  _SetDefaultPythonIfNeeded(vm)
+  # vm.InstallPackages(vm.PYTHON_2_PACKAGE)
+  # _SetDefaultPythonIfNeeded(vm)
 
 
 def _SetDefaultPythonIfNeeded(vm):
