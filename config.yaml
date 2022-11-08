@@ -1,0 +1,33 @@
+static_vms:
+- &vm1 # Using the & character creates an anchor that we can
+         # reference later by using the same name and a * character.
+  ip_address: ssh.oregon.render.com
+  user_name: <render service id like srv-xxxxxxx>
+  ssh_private_key: ~/.ssh/id_ed25519
+  zone: test_zone
+  disk_specs:
+  - mount_point: /var/data
+
+scimark2:
+  vm_groups:
+    default:
+      static_vms:
+      - *vm1
+
+coremark:
+  vm_groups:
+    default:
+      static_vms:
+      - *vm1
+
+block_storage_workload:
+  vm_groups:
+    default:
+      static_vms:
+      - *vm1
+
+hpcc:
+  vm_groups:
+    default:
+      static_vms:
+      - *vm1
