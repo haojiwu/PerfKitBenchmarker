@@ -2,6 +2,7 @@ services:
   - type: pserv
     name: benchmark
     env: docker
+    dockerfilePath: Dockerfile.render
     region: oregon
     plan: pro
     dockerCommand: python3 -m http.server 9999 --bind 0.0.0.0
