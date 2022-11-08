@@ -1,0 +1,11 @@
+services:
+  - type: pserv
+    name: benchmark
+    env: docker
+    region: oregon
+    plan: pro
+    dockerCommand: python3 -m http.server 9999 --bind 0.0.0.0
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 500
